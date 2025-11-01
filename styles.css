@@ -98,6 +98,9 @@ body {
   padding: 0 5vw;
   gap: 2vw;
   text-align: left;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero::before {
@@ -119,6 +122,70 @@ body {
   50% {
     transform: translateY(-20px);
   }
+}
+
+.hero-inner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+.hero-left-column {
+  flex: 1;
+  text-align: left;
+  padding-right: 20px;
+  color: #fff;
+  max-width: 50%;
+}
+
+.hero-left-column h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  line-height: 1.1;
+  font-weight: 700;
+  background: linear-gradient(45deg, #1A73E8, #FFD600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-left-column p {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.hero-right-column {
+  flex: 1;
+  text-align: right;
+  padding-left: 20px;
+  color: #fff;
+  max-width: 50%;
+}
+
+.hero-right-column h2 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  font-weight: 700;
+  background: linear-gradient(45deg, #1A73E8, #FFD600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-right-column h3 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  line-height: 1.2;
+  font-weight: 400;
 }
 
 .hero-content {
@@ -190,6 +257,14 @@ body {
   }
 }
 
+.hero-content h1 {
+  margin-bottom: 0;
+}
+
+.hero-content p {
+  margin-top: 0;
+}
+
 /* Section Styles */
 .section {
   padding: 100px 0;
@@ -205,9 +280,11 @@ body {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 50px;
-  background: linear-gradient(45deg, #667eea, #764ba2);
+  background: linear-gradient(45deg, #1A73E8, #FFD600);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 /* About Section */
@@ -249,11 +326,19 @@ body {
   text-align: center;
   box-shadow: 0 8px 24px rgba(0,0,0,0.18), 0 1.5px 4px rgba(0,0,0,0.12);
   transition: box-shadow 0.3s, transform 0.3s;
-  /* efek 3D saat hover */
 }
+
 .stakeholder-card:hover {
   box-shadow: 0 16px 32px rgba(0,0,0,0.22), 0 3px 8px rgba(0,0,0,0.16);
   transform: translateY(-8px) scale(1.03);
+}
+
+.stakeholder-card h3 {
+  background: linear-gradient(45deg, #1A73E8, #FFD600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .stakeholder-icon {
@@ -271,7 +356,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  align-items: stretch; /* pastikan semua card sama tinggi */
+  align-items: stretch;
   margin-top: 50px;
 }
 
@@ -287,7 +372,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   padding: 30px;
-  min-height: 370px; /* samakan di semua card */
+  min-height: 370px;
 }
 
 .product-card:hover {
@@ -297,39 +382,44 @@ body {
 
 .product-image {
   width: 100%;
-  aspect-ratio: 1 / 1; /* Biar kotak, bisa diganti misal 4/3, 16/9, dll */
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f5f5f5; /* opsional, biar ada background */
+  background: #f5f5f5;
 }
 
 .product-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Gambar akan menutupi area, tetap proporsional */
+  object-fit: cover;
   object-position: center;
   display: block;
 }
 
 .thinner-img {
   object-fit: contain !important;
-  background: #f5f5f5; /* opsional, biar tidak transparan */
+  background: #f5f5f5;
 }
 
-.product-content {
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: 370px; /* Atur sesuai kebutuhan agar semua card sama tinggi */
+.product-img-prop {
+  object-fit: contain !important;
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+  display: block;
 }
 
 .product-title {
   font-size: 1.5rem;
   margin-bottom: 15px;
   color: #333;
+  background: linear-gradient(45deg, #1A73E8, #FFD600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .product-description {
@@ -434,247 +524,6 @@ body {
   margin-top: 10px;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .navbar {
-    top: 10px;
-    padding: 10px 20px;
-  }
-
-  .nav-content {
-    gap: 15px;
-  }
-
-  .nav-links {
-    gap: 15px;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .about-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .about-image {
-    font-size: 120px;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-}
-
-/* Responsive: Stack on mobile */
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 2vw;
-    gap: 1.5rem;
-  }
-  .hero-content, .hero-promo {
-    max-width: 100vw;
-    text-align: center;
-    align-items: center;
-  }
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Animation for sections */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ==========================
-   Floating WhatsApp Button (Responsive + Tooltip Atas)
-========================== */
-.floating-whatsapp {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #25d366, #128c7e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
-  z-index: 1100;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  animation: pulse 2s infinite;
-}
-
-.floating-whatsapp:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
-}
-
-.floating-whatsapp svg {
-  width: 34px;
-  height: 34px;
-  fill: white;
-}
-
-/* === Tooltip muncul di atas tombol === */
-.floating-whatsapp::before {
-  content: "Chat Admin via WhatsApp";
-  position: absolute;
-  bottom: 75px;
-  right: 50%;
-  transform: translateX(50%);
-  background: rgba(0, 0, 0, 0.85);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 14px;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.floating-whatsapp::after {
-  content: "";
-  position: absolute;
-  bottom: 65px;
-  right: 50%;
-  transform: translateX(50%);
-  border: 6px solid transparent;
-  border-top-color: rgba(0, 0, 0, 0.85);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.floating-whatsapp:hover::before,
-.floating-whatsapp:hover::after {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* === Efek Pulse === */
-@keyframes pulse {
-  0% {
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
-  }
-  50% {
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3),
-      0 0 0 10px rgba(37, 211, 102, 0.1);
-  }
-  100% {
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
-  }
-}
-
-/* === Responsive Adjustments === */
-@media (max-width: 992px) {
-  .floating-whatsapp {
-    bottom: 24px;
-    right: 24px;
-    width: 56px;
-    height: 56px;
-  }
-
-  .floating-whatsapp svg {
-    width: 30px;
-    height: 30px;
-  }
-
-  .floating-whatsapp::before,
-  .floating-whatsapp::after {
-    display: none; /* sembunyikan tooltip di tablet */
-  }
-}
-
-@media (max-width: 600px) {
-  .floating-whatsapp {
-    bottom: 18px;
-    right: 18px;
-    width: 52px;
-    height: 52px;
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
-  }
-
-  .floating-whatsapp svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  .floating-whatsapp::before,
-  .floating-whatsapp::after {
-    display: none; /* tooltip disembunyikan di HP */
-  }
-}
-
-@media (max-width: 400px) {
-  .floating-whatsapp {
-    bottom: 14px;
-    right: 14px;
-    width: 48px;
-    height: 48px;
-  }
-
-  .floating-whatsapp svg {
-    width: 26px;
-    height: 26px;
-  }
-}
-
-.product-img-prop {
-  object-fit: contain !important;
-  width: 100%;
-  height: 100%;
-  background: #f5f5f5; /* opsional, agar tidak transparan */
-  display: block;
-} 
-
-.hero-content h1 {
-  margin-bottom: 0;
-}
-
-.hero-content p {
-  margin-top: 0;
-} 
-
-/* Semua judul utama dan subjudul */
-.hero h1,
-.section-title,
-.product-title,
-.stakeholder-card h3 {
-  background: linear-gradient(45deg, #1A73E8, #FFD600);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-/* BUY BUTTON */
-.buy-button {
-  background: linear-gradient(45deg, #1976D2, #FFD600);
-  color: #fff;
-}
-
-.buy-button:hover {
-  box-shadow: 0 5px 15px rgba(26,115,232,0.25);
-  background: linear-gradient(90deg, #FFD600 60%, #1976D2 100%);
-} 
-
 /* Promo Section with Background */
 .promo {
   position: relative;
@@ -716,7 +565,6 @@ html {
   text-align: center;
   margin-bottom: 20px;
   flex: 1 1 300px;
-  /* Agar proporsional di flex */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -742,46 +590,6 @@ html {
   color: transparent;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .promo-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  .promo-card {
-    min-width: 80vw;
-    max-width: 95vw;
-    padding: 20px 10px;
-  }
-}
-
-/* Testimoni Section */
-.testimoni-grid {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.testimoni-card {
-  background: #f8f9fa;
-  border-radius: 16px;
-  padding: 30px 40px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-  min-width: 260px;
-  max-width: 350px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-.testimoni-card p {
-  font-style: italic;
-  margin-bottom: 12px;
-}
-.testimoni-card span {
-  font-weight: bold;
-  color: #FFD600;
-} 
-
 /* Testimoni Carousel */
 .testimoni-carousel-wrapper {
   overflow: hidden;
@@ -805,7 +613,7 @@ html {
   padding: 32px 40px;
   box-shadow:
     0 8px 32px rgba(26,115,232,0.13),
-    0 0 12px 2px rgba(255,214,0,0.17); /* Efek glow orange */
+    0 0 12px 2px rgba(255,214,0,0.17);
   border: 2px solid #FFD600;
   text-align: left;
   margin-bottom: 10px;
@@ -824,15 +632,17 @@ html {
   transform: translateY(-8px) scale(1.04);
   box-shadow:
     0 16px 48px rgba(26,115,232,0.15),
-    0 0 32px 8px rgba(255,214,0,0.20); /* Glow lebih besar saat hover */
+    0 0 32px 8px rgba(255,214,0,0.20);
   border-color: #FFD600;
   background: #f9fbe7;
 }
+
 .testimoni-card p {
   font-style: italic;
   margin-bottom: 16px;
   font-size: 1.1rem;
 }
+
 .testimoni-card span {
   font-weight: bold;
   color: #FFD600;
@@ -844,25 +654,65 @@ html {
   100% { transform: translateX(-50%); }
 }
 
-/* Responsive */
-@media (max-width: 700px) {
-  .testimoni-card {
-    min-width: 90vw;
-    max-width: 95vw;
-    padding: 20px 10px;
-  }
-  .testimoni-carousel {
-    gap: 16px;
-  }
+/* Distributor Section */
+.distributor-official {
+  background: #f8f9fa;
 }
 
-@media (max-width: 700px) {
-  .product-content {
-    min-height: 0;
-    padding: 20px 10px;
-  }
-} 
+.distributor-logos {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
 
+.distributor-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10), 0 1.5px 4px rgba(0,0,0,0.08);
+  padding: 32px 30px 20px 30px;
+  min-width: 200px;
+  max-width: 290px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.distributor-card:hover {
+  box-shadow: 0 18px 38px rgba(26,115,232,0.16), 0 3px 12px rgba(255,214,0,0.10);
+  transform: translateY(-8px) scale(1.04);
+}
+
+.distributor-img {
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 7px #0001;
+  padding: 14px 24px;
+  margin-bottom: 14px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.distributor-card:hover .distributor-img {
+  box-shadow: 0 4px 18px #667eea30;
+  transform: scale(1.08);
+}
+
+.distributor-name {
+  margin-top: 4px;
+  font-size: 1.08em;
+  font-weight: 700;
+  color: #434242;
+  letter-spacing: 0.5px;
+}
+
+/* Footer */
 .footer {
   background: #222;
   color: #fff;
@@ -923,6 +773,7 @@ html {
   text-decoration: none;
   transition: color 0.2s;
 }
+
 .footer-info a:hover {
   color: #FFD600;
   text-decoration: underline;
@@ -937,22 +788,86 @@ html {
   margin-top: 32px;
 }
 
-@media (max-width: 700px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-  }
-  .footer-info {
-    flex-direction: column;
-    gap: 18px;
-  }
-  .footer-brand {
-    margin-bottom: 0;
-  }
-} 
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+  z-index: 1100;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
 
-/* ==== HAMBURGER MENU UPGRADE ==== */
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+}
+
+.floating-whatsapp svg {
+  width: 34px;
+  height: 34px;
+  fill: white;
+}
+
+.floating-whatsapp::before {
+  content: "Chat Admin via WhatsApp";
+  position: absolute;
+  bottom: 75px;
+  right: 50%;
+  transform: translateX(50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.floating-whatsapp::after {
+  content: "";
+  position: absolute;
+  bottom: 65px;
+  right: 50%;
+  transform: translateX(50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.floating-whatsapp:hover::before,
+.floating-whatsapp:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3),
+      0 0 0 10px rgba(37, 211, 102, 0.1);
+  }
+  100% {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+  }
+}
+
+/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -973,25 +888,157 @@ html {
   transition: all 0.3s ease;
 }
 
-/* Animasi berubah jadi “X” */
 .hamburger.active span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
+
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.active span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Efek hover gradasi halus */
 .hamburger:hover span {
   background: linear-gradient(45deg, #FFD600, #1A73E8);
   transform: scaleX(1.1);
 }
 
-/* ==== MOBILE MENU UPGRADE ==== */
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation for sections */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============================================
+   RESPONSIVE MEDIA QUERIES
+============================================= */
+
+/* Tablet & Medium Screens */
+@media (max-width: 992px) {
+  .hero-left-column h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-left-column p {
+    font-size: 1.2rem;
+  }
+  
+  .hero-right-column h2 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-right-column h3 {
+    font-size: 1.5rem;
+  }
+
+  .floating-whatsapp {
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .floating-whatsapp svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .floating-whatsapp::before,
+  .floating-whatsapp::after {
+    display: none;
+  }
+}
+
+/* Promo Section Responsive */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2vw;
+    gap: 1.5rem;
+  }
+  
+  .hero-content, .hero-promo {
+    max-width: 100vw;
+    text-align: center;
+    align-items: center;
+  }
+
+  .promo {
+    padding: 60px 0;
+    min-height: auto;
+  }
+
+  .promo-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .promo-card {
+    min-width: 80vw;
+    max-width: 95vw;
+    padding: 25px 20px;
+    margin-bottom: 15px;
+  }
+
+  .promo-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .promo-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+/* Distributor Responsive */
+@media (max-width: 800px) {
+  .distributor-logos {
+    gap: 18px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .distributor-card {
+    min-width: 60vw;
+    max-width: 97vw;
+    padding: 24px 8vw;
+  }
+  
+  .distributor-img {
+    width: 86px;
+    height: 86px;
+    padding: 10px 12px;
+  }
+}
+
+/* Tablet & Small Screens */
 @media (max-width: 768px) {
+  .navbar {
+    top: 10px;
+    padding: 10px 20px;
+  }
+
+  .nav-content {
+    gap: 15px;
+    position: relative;
+  }
+
   .nav-links {
     display: flex;
     flex-direction: column;
@@ -1016,6 +1063,7 @@ html {
     opacity: 1;
     transform: scale(1) translateY(0);
     pointer-events: auto;
+    animation: fadeMenu 0.35s ease forwards;
   }
 
   .nav-links a {
@@ -1041,278 +1089,116 @@ html {
     display: flex;
   }
 
-  .nav-content {
-    position: relative;
-  }
-}
-
-/* ==== ANIMASI MENU MASUK ==== */
-@keyframes fadeMenu {
-  from {
-    opacity: 0;
-    transform: scale(0.9) translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-.nav-links.active {
-  animation: fadeMenu 0.35s ease forwards;
-}
-
-
-/* Hero Section Responsive */
-@media (max-width: 768px) {
   .hero {
-    padding: 60px 10px 40px 10px;
-    min-height: 60vh;
-    background-size: cover;
-    background-position: center;
-  }
-  .hero-content {
-    text-align: center;
-    padding: 0 10px;
-  }
-  .hero-content h1 {
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-  .hero-content p {
-    font-size: 1.1rem;
-    margin-bottom: 18px;
-  }
-  .cta-button {
-    font-size: 1rem;
-    padding: 10px 24px;
-  }
-} 
-
-/* Hero Section Responsive & Proportional for Mobile */
-@media (max-width: 600px) {
-  .hero {
-    min-height: 60vh;
-    padding: 40px 8px 30px 8px;
-    display: flex;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-  }
-  .hero-content {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 4vw;
-    text-align: center;
-  }
-  .hero-content h1 {
-    font-size: 1.7rem;
-    line-height: 1.2;
-    margin-bottom: 12px;
-    word-break: break-word;
-  }
-  .hero-content p {
-    font-size: 1.05rem;
-    margin-bottom: 18px;
-    line-height: 1.4;
-    word-break: break-word;
-  }
-  .cta-button {
-    font-size: 0.98rem;
-    padding: 10px 22px;
-    border-radius: 6px;
-    width: 100%;
-    max-width: 260px;
-    margin: 0 auto;
-    display: inline-block;
-  }
-} 
-
-.hero {
-  background-image: url('image/hero_bg.png'); /* Ganti dengan nama file gambar yang kamu inginkan */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 85vh; /* Sesuaikan tinggi hero section */
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative; /* Penting untuk posisi konten */
-  overflow: hidden; /* Mengatasi potensi masalah overflow */
-}
-
-.hero-inner-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%; /* Sesuaikan lebar container */
-  max-width: 1200px; /* Batasi lebar maksimal */
-  margin: 0 auto;
-  padding: 0 20px;
-  z-index: 1; /* Pastikan konten di atas background */
-}
-
-.hero-left-column {
-  flex: 1;
-  text-align: left;
-  padding-right: 20px;
-  color: #fff; /* Warna teks sesuai gambar jika background gelap */
-  max-width: 50%; /* Batasi lebar kolom kiri */
-}
-
-.hero-left-column h1 {
-  font-size: 3.5rem; /* Sesuaikan ukuran font utama */
-  margin-bottom: 10px;
-  line-height: 1.1;
-  font-weight: 700;
-}
-
-.hero-left-column p {
-  font-size: 1.3rem; /* Sesuaikan ukuran font deskripsi */
-  margin-bottom: 25px;
-  font-weight: 400;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: #FFD600; /* Warna tombol */
-  color: #1976D2;
-  padding: 14px 30px;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #1A73E8;
-  color: #fff;
-}
-
-.hero-right-column {
-  flex: 1;
-  text-align: right;
-  padding-left: 20px;
-  color: #fff; /* Warna teks sesuai gambar */
-  max-width: 50%; /* Batasi lebar kolom kanan */
-}
-
-.hero-right-column h2 {
-  font-size: 2.8rem; /* Ukuran font untuk judul kanan */
-  margin-bottom: 10px;
-  line-height: 1.2;
-  font-weight: 700;
-}
-
-.hero-right-column h3 {
-  font-size: 1.8rem; /* Ukuran font untuk sub judul kanan */
-  margin-bottom: 8px;
-  line-height: 1.2;
-  font-weight: 400;
-}
-
-/* Responsive untuk layar kecil (HP) */
-@media (max-width: 992px) { /* Medium screens */
-  .hero-left-column h1 {
-    font-size: 3rem;
-  }
-  .hero-left-column p {
-    font-size: 1.2rem;
-  }
-  .hero-right-column h2 {
-    font-size: 2.2rem;
-  }
-  .hero-right-column h3 {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) { /* Small screens / Tablets */
-  .hero {
-    min-height: 80vh; /* Sesuaikan tinggi hero di tablet */
+    min-height: 80vh;
     padding: 60px 0;
   }
+
   .hero-inner-container {
-    flex-direction: column; /* Ubah ke tumpuk vertikal */
+    flex-direction: column;
     text-align: center;
     width: 95%;
   }
+
   .hero-left-column,
   .hero-right-column {
-    flex: none; /* Hapus flex grow */
-    width: 100%; /* Ambil lebar penuh */
+    flex: none;
+    width: 100%;
     max-width: 100%;
-    padding: 0 10px; /* Sesuaikan padding */
+    padding: 0 10px;
     text-align: center;
-    margin-bottom: 30px; /* Tambah jarak antar kolom */
+    margin-bottom: 30px;
   }
+
   .hero-left-column h1 {
     font-size: 2.5rem;
     margin-bottom: 8px;
   }
+
   .hero-left-column p {
     font-size: 1.1rem;
     margin-bottom: 20px;
   }
+
   .hero-right-column h2 {
     font-size: 1.8rem;
     margin-top: 0;
   }
+
   .hero-right-column h3 {
     font-size: 1.2rem;
     margin-bottom: 6px;
   }
+
   .cta-button {
     padding: 12px 25px;
     font-size: 1rem;
   }
-}
 
-@media (max-width: 480px) { /* Extra small screens / Mobile phones */
-  .hero {
-    min-height: 70vh; /* Sesuaikan tinggi hero di HP */
-    padding: 40px 0;
+  .hero h1 {
+    font-size: 2.5rem;
   }
-  .hero-left-column h1 {
+
+  .section-title {
     font-size: 2rem;
   }
-  .hero-left-column p {
-    font-size: 1rem;
-  }
-  .hero-right-column h2 {
-    font-size: 1.5rem;
-  }
-  .hero-right-column h3 {
-    font-size: 1rem;
-  }
-  .cta-button {
-    width: 90%; /* Tombol bisa lebih lebar di HP */
-    max-width: 250px;
-  }
-} 
 
-/* Testimoni Section Responsive */
-@media (max-width: 768px) {
+  /* About Section Responsive */
+  .about {
+    padding: 60px 0;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .about-text {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .about-image {
+    font-size: 120px;
+    opacity: 0.3;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Testimoni Carousel Responsive */
   .testimoni-carousel-wrapper {
-    overflow-x: auto; /* Aktifkan scroll horizontal jika card terlalu banyak */
-    scroll-snap-type: x mandatory; /* Memastikan snap pada setiap card */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling di iOS */
-    padding-bottom: 15px; /* Tambah padding bawah untuk scrollbar */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px;
   }
 
   .testimoni-carousel {
     display: flex;
-    flex-wrap: nowrap; /* Pastikan card tetap satu baris, tapi bisa di-scroll */
-    gap: 15px; /* Jarak antar card */
-    padding: 10px; /* Padding agar card tidak menempel di tepi */
+    flex-wrap: nowrap;
+    gap: 15px;
+    padding: 10px;
   }
 
   .testimoni-card {
-    flex: 0 0 85%; /* Setiap card mengambil 85% lebar wrapper */
-    min-width: 280px; /* Batasi lebar minimal */
-    scroll-snap-align: start; /* Snap ke awal setiap card */
+    flex: 0 0 85%;
+    min-width: 280px;
+    scroll-snap-align: start;
     padding: 20px;
   }
 
@@ -1326,126 +1212,206 @@ html {
   }
 }
 
-@media (max-width: 480px) {
+/* Testimoni Responsive Small */
+@media (max-width: 700px) {
   .testimoni-card {
-    flex: 0 0 95%; /* Lebih lebar lagi di HP kecil */
-    min-width: unset; /* Hapus min-width */
+    min-width: 90vw;
+    max-width: 95vw;
+    padding: 20px 10px;
   }
-} 
+  
+  .testimoni-carousel {
+    gap: 16px;
+  }
 
-/* About Section Responsive */
-@media (max-width: 768px) {
+  .product-content {
+    min-height: 0;
+    padding: 20px 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  
+  .footer-info {
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  .footer-brand {
+    margin-bottom: 0;
+  }
+}
+
+/* Mobile & Small Screens */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 60vh;
+    padding: 40px 8px 30px 8px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 4vw;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.7rem;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    word-break: break-word;
+  }
+  
+  .hero-content p {
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+  
+  .cta-button {
+    font-size: 0.98rem;
+    padding: 10px 22px;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+    display: inline-block;
+  }
+
+  .floating-whatsapp {
+    bottom: 18px;
+    right: 18px;
+    width: 52px;
+    height: 52px;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+  }
+
+  .floating-whatsapp svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .floating-whatsapp::before,
+  .floating-whatsapp::after {
+    display: none;
+  }
+}
+
+/* Extra Small Mobile Screens */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 70vh;
+    padding: 40px 0;
+  }
+
+  .hero-left-column h1 {
+    font-size: 2rem;
+  }
+
+  .hero-left-column p {
+    font-size: 1rem;
+  }
+
+  .hero-right-column h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-right-column h3 {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    width: 90%;
+    max-width: 250px;
+  }
+
+  /* About Section Extra Small */
+  .about {
+    padding: 40px 0;
+  }
+
   .about-content {
-    flex-direction: column; /* Tumpuk vertikal */
-    text-align: center; /* Teks di tengah */
-    gap: 30px; /* Jarak antara teks dan gambar */
-  }
-
-  .about-text {
-    width: 100%; /* Ambil lebar penuh */
-    padding: 0 15px; /* Tambah padding horizontal */
+    padding: 0 15px;
+    gap: 20px;
   }
 
   .about-text p {
-    font-size: 1rem; /* Ukuran font lebih kecil */
-    line-height: 1.6;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .about-image {
+    font-size: 100px;
+    width: 90%;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  /* Promo Section Extra Small */
+  .promo {
+    padding: 40px 0;
+  }
+
+  .promo-content {
+    padding: 0 15px;
+    gap: 15px;
+  }
+
+  .promo-card {
+    min-width: 90vw;
+    max-width: 95vw;
+    padding: 20px 15px;
     margin-bottom: 10px;
   }
 
-  .about-image {
-    width: 80%; /* Gambar tidak terlalu besar di HP */
-    max-width: 300px; /* Batasi lebar maksimal gambar */
-    margin: 0 auto; /* Tengah gambar */
+  .promo-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
   }
 
-  .about-image img {
-    width: 100%;
-    height: auto;
+  .promo-card p {
+    font-size: 0.9rem;
+  }
+
+  .testimoni-card {
+    flex: 0 0 95%;
+    min-width: unset;
+  }
+
+  .floating-whatsapp {
+    bottom: 14px;
+    right: 14px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .floating-whatsapp svg {
+    width: 26px;
+    height: 26px;
   }
 }
 
-@media (max-width: 480px) {
-  .about-text p {
-    font-size: 0.95rem;
+/* Animation for mobile menu */
+@keyframes fadeMenu {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-10px);
   }
-  .about-image {
-    width: 90%;
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
   }
-} 
-
-/* Distributor Section */
-.distributor-official {
-  background: #f8f9fa;
 }
-
-.distributor-logos {
-  display: flex;
-  gap: 36px;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-.distributor-card {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.10), 0 1.5px 4px rgba(0,0,0,0.08);
-  padding: 32px 30px 20px 30px;
-  min-width: 200px;
-  max-width: 290px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-
-.distributor-card:hover {
-  box-shadow: 0 18px 38px rgba(26,115,232,0.16), 0 3px 12px rgba(255,214,0,0.10);
-  transform: translateY(-8px) scale(1.04);
-}
-
-.distributor-img {
-  width: 104px;
-  height: 104px;
-  object-fit: contain;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 1px 7px #0001;
-  padding: 14px 24px;
-  margin-bottom: 14px;
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-
-.distributor-card:hover .distributor-img {
-  box-shadow: 0 4px 18px #667eea30;
-  transform: scale(1.08);
-}
-
-.distributor-name {
-  margin-top: 4px;
-  font-size: 1.08em;
-  font-weight: 700;
-  color: #434242;
-  letter-spacing: 0.5px;
-}
-
-@media (max-width: 800px) {
-  .distributor-logos {
-    gap: 18px;
-    flex-direction: column;
-    align-items: center;
-  }
-  .distributor-card {
-    min-width: 60vw;
-    max-width: 97vw;
-    padding: 24px 8vw;
-  }
-  .distributor-img {
-    width: 86px;
-    height: 86px;
-    padding: 10px 12px;
-  }
-} 
-
