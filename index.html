@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FIDL Painting - Cat Berkualitas Premium</title>
+    <title>FDL Warna Mandiri - Cat Berkualitas Premium</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
@@ -14,8 +14,19 @@
     <!-- Navbar Tabung -->
     <nav class="navbar">
       <div class="nav-content">
-        <div class="logo">FIDL</div>
-        <ul class="nav-links">
+        <div class="logo">
+          <img
+            src="image/logo_PT.jpg"
+            alt="Logo FDL Warna Mandiri"
+            style="height: 40px; vertical-align: middle"
+          />
+        </div>
+        <div class="hamburger" id="hamburger-menu" onclick="toggleNavbar()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#otomotif">Layanan</a></li>
@@ -28,39 +39,83 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-      <div class="hero-content fade-in">
-        <h1>FIDL Painting</h1>
-        <p>Warna Terbaik Untuk Kendaraan Anda</p>
-        <a href="#products" class="cta-button">Lihat Produk</a>
+      <div class="hero-inner-container">
+        <div class="hero-left-column fade-in">
+          <h1>FDL Warna Mandiri</h1>
+          <p>Warna Terbaik Untuk Rumah, dan kendaraan anda</p>
+          <a href="dashboard.html" class="cta-button">Lihat Produk</a>
+        </div>
       </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section about">
       <div class="container">
-        <h2 class="section-title fade-in">Tentang FIDL Painting</h2>
+        <h2 class="section-title fade-in">Tentang FDL Warna Mandiri</h2>
         <div class="about-content fade-in">
           <div class="about-text">
             <p>
-              FIDL Painting adalah perusahaan cat terpercaya yang telah
-              berpengalaman lebih dari 10 tahun dalam industri cat dan coating.
-              Kami berkomitmen untuk memberikan produk cat berkualitas tinggi
-              dengan teknologi terdepan.
+              FDL Warna Mandiri adalah distributor resmi produk cat ternama
+              seperti Cargloss, Jotun, dan Dulux. Kami menyediakan berbagai
+              jenis cat berkualitas tinggi untuk segala kebutuhan, mulai dari
+              cat rumah interior dan eksterior, cat kapal, cat mobil, cat kayu
+              dan besi, hingga cat epoxy untuk industri. Semua produk kami
+              dipilih untuk memastikan hasil pengecatan yang tahan lama dan
+              memuaskan.
             </p>
             <br />
             <p>
-              Dengan beragam pilihan warna dan formula khusus, FIDL Painting
-              hadir untuk memenuhi kebutuhan pengecatan rumah, gedung, dan
-              berbagai proyek konstruksi lainnya. Kualitas premium dengan harga
-              yang terjangkau adalah komitmen kami untuk Anda.
+              Dengan pengalaman dan komitmen tinggi, FDL Warna Mandiri hadir
+              untuk membantu Anda mewujudkan proyek pengecatan yang sempurna,
+              baik untuk rumah, kantor, maupun skala industri. Kami percaya
+              kualitas premium tidak harus mahal, dan selalu siap memberikan
+              solusi cat terbaik yang sesuai kebutuhan Anda.
             </p>
           </div>
           <div class="about-image">
             <img
-              src="image/logo_fidlp.jpg"
-              alt="Logo FIDL Painting"
+              src="image/logo_PT.jpg"
+              alt="Logo FDL Warna Mandiri"
               style="width: 400px; height: auto"
             />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Distributor Section Baru-->
+    <section class="section distributor-official">
+      <div class="container">
+        <h3
+          class="section-title fade-in"
+          style="margin-bottom: 16px; font-weight: 700; color: #565656"
+        >
+          Official Distributor dari:
+        </h3>
+        <div class="distributor-logos fade-in">
+          <div class="distributor-card">
+            <img
+              src="image/logo_cargloss.png"
+              alt="Logo Cargloss"
+              class="distributor-img"
+            />
+            <div class="distributor-name">Cargloss</div>
+          </div>
+          <div class="distributor-card">
+            <img
+              src="image/logo_jotun.png"
+              alt="Logo Jotun"
+              class="distributor-img"
+            />
+            <div class="distributor-name">Jotun</div>
+          </div>
+          <div class="distributor-card">
+            <img
+              src="image/Logo_Dulux.jpg"
+              alt="Logo Dulux"
+              class="distributor-img"
+            />
+            <div class="distributor-name">Dulux</div>
           </div>
         </div>
       </div>
@@ -75,6 +130,11 @@
             <div class="stakeholder-icon">🚗</div>
             <h3>Mobil</h3>
             <p>Layanan dan produk terbaik untuk kendaraan roda empat Anda</p>
+          </div>
+          <div class="stakeholder-card">
+            <div class="stakeholder-icon">🏠</div>
+            <h3>Rumah</h3>
+            <p>Produk cat untuk Interior dan Eskterior Rumah Anda</p>
           </div>
           <div class="stakeholder-card">
             <div class="stakeholder-icon">🏍️</div>
@@ -99,13 +159,13 @@
           <div class="product-card">
             <div class="product-image">
               <img
-                src="image/carafine.jpg"
+                src="image/cat/carfine.png"
                 alt="Carafine"
                 class="product-img-prop"
               />
             </div>
             <div class="product-content">
-              <h3 class="product-title">Cargloss</h3>
+              <h3 class="product-title">Carafine</h3>
               <p class="product-description">
                 Cat Cargloss berkualitas tinggi untuk hasil akhir mengkilap dan
                 perlindungan maksimal.
@@ -162,19 +222,60 @@
           <div class="product-card">
             <div class="product-image">
               <img
-                src="image/thinner.jpg"
-                alt="Thinner"
+                src="image/cat/viniton-2901.png"
+                alt="Viniton"
                 class="product-img-prop"
               />
             </div>
             <div class="product-content">
-              <h3 class="product-title">Thinner</h3>
+              <h3 class="product-title">Viniton 2901</h3>
               <p class="product-description">
-                Thinner digunakan untuk mengencerkan cat dan membersihkan
-                alat-alat pengecatan agar hasil pengecatan lebih optimal.
+                Cat Cargloss untuk interior berkualitas tinggi untuk hasil akhir
+                halus dan tahan lama.
               </p>
-              <div class="color-selector" style="visibility: hidden"></div>
-              <button class="buy-button" onclick="buyNow('Thinner', 'thinner')">
+              <div class="color-selector">
+                <label>Pilih Warna:</label>
+                <div class="color-options">
+                  <div
+                    class="color-option"
+                    style="background-color: #eed1dc"
+                    data-color="Lady Pink"
+                    onclick="selectColor(this, 'interior')"
+                  ></div>
+                  <div
+                    class="color-option"
+                    style="background-color: #f2e2a0"
+                    data-color="Sun Glint Yellow"
+                    onclick="selectColor(this, 'interior')"
+                  ></div>
+                  <div
+                    class="color-option"
+                    style="background-color: #cef0c3"
+                    data-color="Light Green"
+                    onclick="selectColor(this, 'interior')"
+                  ></div>
+                  <div
+                    class="color-option"
+                    style="background-color: #f6f4c4"
+                    data-color="Pumpkin Yellow"
+                    onclick="selectColor(this, 'interior')"
+                  ></div>
+                  <div
+                    class="color-option"
+                    style="background-color: #dbeffc"
+                    data-color="Sky Light Blue"
+                    onclick="selectColor(this, 'interior')"
+                  ></div>
+                </div>
+                <div class="selected-color" id="interior-selected">
+                  Pilih warna terlebih dahulu
+                </div>
+              </div>
+              <button
+                class="buy-button"
+                onclick="buyNow('Interior', 'interior')"
+                disabled
+              >
                 Beli Sekarang
               </button>
             </div>
@@ -182,7 +283,13 @@
 
           <!-- Produk Custom -->
           <div class="product-card">
-            <div class="product-image">🎨</div>
+            <div class="product-image">
+              <img
+                src="image/costom-warna.png"
+                alt="costom"
+                class="product-img-prop"
+              />
+            </div>
             <div class="product-content">
               <h3 class="product-title">Custom</h3>
               <p class="product-description">
@@ -244,6 +351,17 @@
             </div>
           </div>
         </div>
+
+        <!-- Button Lihat Katalog -->
+        <div class="view-catalog" style="text-align: center; margin-top: 2rem">
+          <a
+            href="dashboard.html"
+            class="buy-button"
+            style="padding: 0.8rem 2rem"
+          >
+            Lihat Semua Produk
+          </a>
+        </div>
       </div>
     </section>
 
@@ -293,8 +411,8 @@
           <div class="testimoni-carousel" id="testimoni-carousel">
             <div class="testimoni-card">
               <p>
-                "Cat FIDL benar-benar berkualitas, hasil pengecatan mobil saya
-                jadi mengkilap dan tahan lama!"
+                "Cat FDL Warna Mandiri benar-benar berkualitas, hasil pengecatan
+                mobil saya jadi mengkilap dan tahan lama!"
               </p>
               <span>- Budi, Jakarta</span>
             </div>
@@ -337,11 +455,11 @@
       <div class="footer-container">
         <div class="footer-brand">
           <img
-            src="image/logo_fidlp.jpg"
-            alt="FIDL Painting Logo"
+            src="image/logo_PT.jpg"
+            alt="FDL Warna Mandiri Logo"
             class="footer-logo"
           />
-          <span class="footer-title">FIDL PAINTING</span>
+          <span class="footer-title">FDL WARNA MANDIRI</span>
         </div>
         <div class="footer-info">
           <div>
@@ -356,12 +474,14 @@
           </div>
           <div>
             <strong>Email:</strong><br />
-            <a href="mailto:info@fidlpainting.com">info@fidlpainting.com</a>
+            <a href="mailto:info@fdlwarnamandiri.com"
+              >info@fdlwarnamandiri.com</a
+            >
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        &copy; 2024 FIDL Painting. All rights reserved.
+        &copy; 2024 FDL Warna Mandiri. All rights reserved.
       </div>
     </footer>
 

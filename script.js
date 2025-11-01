@@ -70,19 +70,7 @@ function buyNow(productName, productType) {
   const adminWhatsApp = "6281234567890"; // Ganti dengan nomor admin
 
   // Create WhatsApp message
-  const message = `Halo Admin FIDL Painting!
-
-Saya tertarik untuk membeli:
-📦 Produk: ${productName}
-🎨 Warna: ${selectedColor}
-
-Mohon informasi lebih lanjut mengenai:
-- Harga produk
-- Ketersediaan stok
-- Cara pemesanan
-- Estimasi pengiriman
-
-Terima kasih! 😊`;
+  const message = `Halo Admin FDL Warna Mandiri!\n\nSaya tertarik untuk membeli:\n📦 Produk: ${productName}\n🎨 Warna: ${selectedColor}\n\nMohon informasi lebih lanjut mengenai:\n- Harga produk\n- Ketersediaan stok\n- Cara pemesanan\n- Estimasi pengiriman\n\nTerima kasih! 😊`;
 
   // Encode message for WhatsApp URL
   const encodedMessage = encodeURIComponent(message);
@@ -100,11 +88,7 @@ function openWhatsAppAdmin() {
   const adminWhatsApp = "6281234567890"; // Ganti dengan nomor admin
 
   // Create simple greeting message
-  const message = `Halo Admin FIDL Painting! 👋
-
-Saya ingin bertanya tentang produk cat yang tersedia. Mohon informasi lebih lanjut.
-
-Terima kasih! 😊`;
+  const message = `Halo Admin FDL Warna Mandiri! 👋\n\nSaya ingin bertanya tentang produk cat yang tersedia. Mohon informasi lebih lanjut.\n\nTerima kasih! 😊`;
 
   // Encode message for WhatsApp URL
   const encodedMessage = encodeURIComponent(message);
@@ -209,3 +193,8 @@ function checkFadeIn() {
 }
 window.addEventListener("scroll", checkFadeIn);
 window.addEventListener("DOMContentLoaded", checkFadeIn);
+
+function toggleNavbar() {
+  const navLinks = document.getElementById("nav-links");
+  navLinks.classList.toggle("active");
+}
